@@ -4,6 +4,8 @@ services:
  devopsdb:
    #container_name: devopsdb
    image: dillidevops2/mynewapp:dbimage
+   deploy:
+     replicas: 3
    ports:
      - "3306:3306"
 
@@ -12,5 +14,7 @@ services:
    #container_name: containerapp
    ports:
      - "1234:8080"
+   deploy:
+     replicas: 3
    depends_on:
      - "devopsdb"
